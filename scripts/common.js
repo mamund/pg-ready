@@ -35,7 +35,7 @@ var pgblib = function() {
     }
 
     function isConnected() {
-        return navigator.network.connection.type !== Conneciton.NONE;
+        return navigator.network.connection.type !== Connection.NONE;
     }
    
     var that = {};
