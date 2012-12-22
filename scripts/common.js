@@ -1,7 +1,7 @@
 // pgbuild common library
 // 2012-12 (@mamund)
 
-var isPhoneVGapReady, intervalID;
+var isPhoneGapReady, intervalID;
 
 isPhoneGapReady = false;
 function init() {
