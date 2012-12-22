@@ -2,7 +2,7 @@
 <widget 
     xmlns = "http://www.w3.org/ns/widgets"
     xmlns:gap = "http://phonegap.com/ns/1.0"
-    id = "com.mamund.pg.ajax"
+    id = "com.mamund.pg.ready"
     version = "2.2.0">
     
     <name>mamund: pg-ready</name>
