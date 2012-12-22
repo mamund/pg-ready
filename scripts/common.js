@@ -1,8 +1,31 @@
 // pgbuild common library
 // 2012-12 (@mamund)
 
-var isPhoneGapReady, intervalID;
+var pg;
+window.onload= function() {
+    pg = pgblib();
+    pg.init();
+}
 
+var pgblib = function() {
+    var g = {};
+    g.isReady = false;
+
+    function init() {
+        document.addEventListener('deviceready', onDeviceReady, false);
+    }
+
+    function onDeviceReady() {
+        isReady = true;
+        alert(g.isReady);
+    }
+
+    var that = {};
+    that.init = init;
+    return that;
+}
+
+/*
 isPhoneGapReady = false;
 function init() {
     // Add an event listener for deviceready
@@ -22,5 +45,5 @@ function onDeviceReady() {
 }
 
 window.onload = init;
-//document.addEventListener("load",init, false);
+*/
 
