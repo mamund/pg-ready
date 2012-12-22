@@ -40,7 +40,7 @@ var pgblib = function() {
    
     var that = {};
     that.init = init;
-    that.isConneced = isConnected;
+    that.isConnected = isConnected;
     that.g = g;
     return that;
 }
