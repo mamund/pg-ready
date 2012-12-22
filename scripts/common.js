@@ -8,7 +8,6 @@ window.onload= function() {
 }
 
 function showPlatform() {
-    alert(pg.g.isAndroid);
     alert(pg.g.deviceUUID);
     alert(pg.g.devicePlatform);
 }
@@ -18,10 +17,6 @@ var pgblib = function() {
     g.deviceUUID = null;
     g.devicePlatform = null;
     g.isReady = false;
-    g.isAndriod = false;
-    g.isBlackberry = false;
-    g.isIphone = false;
-    g.isWindows = false;
 
     function init(next) {
         g.next = next;
@@ -33,32 +28,11 @@ var pgblib = function() {
         isReady = true;
         g.deviceUUID = device.uuid;
         g.devicePlatform = device.platform;
-        deviceDetection(next);
-    }
-
-    function deviceDetection(next) {
-        if(g.isReady) {
-            switch (device.platform) {
-                case 'Android' :
-                    g.isAndroid = true;
-                    break;
-                case 'Blackberry' :
-                    g.isBlackberry = true;
-                    break;
-                case 'iPhone' :
-                    g.isIphone = true;
-                    break;
-                case 'WinCE' :
-                    g.isWindows = true;
-                    break;
-            }
-        }
-        alert(g.isAndriod);
         if(next) {
             next();
         }
     }
-    
+   
     var that = {};
     that.init = init;
     that.g = g;
