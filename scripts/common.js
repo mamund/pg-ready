@@ -10,6 +10,10 @@ window.onload= function() {
 var pgblib = function() {
     var g = {};
     g.isReady = false;
+    g.isAndriod = false;
+    g.isBlackberry = false;
+    g.isIphone = false;
+    g.isWindows = false;
 
     function init() {
         document.addEventListener('deviceready', onDeviceReady, false);
@@ -17,33 +21,31 @@ var pgblib = function() {
 
     function onDeviceReady() {
         isReady = true;
-        alert(g.isReady);
+        g.deviceUUID = device.uuid;
+        deviceDetection();
     }
 
+    function deviceDetection() {
+        if(isPhoneGapReady) {
+            switch (device.platform) {
+                case 'Android' :
+                    isAndroid = true;
+                    break;
+                case 'Blackberry' :
+                    isBlackberry = true;
+                    break;
+                case 'iPhone' :
+                    isIphone = true;
+                    break;
+                case 'WinCE' :
+                    isWindows = true;
+                    break;
+            }
+        }
+        alert(device.platform);
+    }
+    
     var that = {};
     that.init = init;
     return that;
 }
-
-/*
-isPhoneGapReady = false;
-function init() {
-    // Add an event listener for deviceready
-    document.addEventListener("deviceready", onDeviceReady, false);
-}
-
-intervalID = window.setInterval(function() {
-    if (PhoneGap.available) {
-        onDeviceReady();
-    }
-}, 500);
-
-function onDeviceReady() {
-    window.clearInterval(intervalID);
-    isPhoneGapReady = true;
-    alert('The device is now ready');
-}
-
-window.onload = init;
-*/
-
