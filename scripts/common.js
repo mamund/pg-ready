@@ -22,7 +22,6 @@ var pgblib = function() {
 
     function onDeviceReady() {
         isReady = true;
-        //`alert('onDeviceReady');
         alert(device.uuid);
         g.deviceUUID = device.uuid;
         alert(g.deviceUUID);
@@ -30,7 +29,7 @@ var pgblib = function() {
     }
 
     function deviceDetection() {
-        if(isPhoneGapReady) {
+        if(g.isReady) {
             switch (device.platform) {
                 case 'Android' :
                     g.isAndroid = true;
