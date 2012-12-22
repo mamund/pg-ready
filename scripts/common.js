@@ -4,13 +4,12 @@
 var pg;
 window.onload= function() {
     pg = pgblib();
-    alert('onload');
     pg.init(showPlatform);
-    alert('init is done');
 }
 
 function showPlatform() {
     alert(pg.g.isAndroid);
+    alert(pg.g.deviceUUID);
 }
 
 var pgblib = function() {
@@ -52,7 +51,9 @@ var pgblib = function() {
             }
         }
         alert(g.isAndriod);
-        next();
+        if(next) {
+            next();
+        }
     }
     
     var that = {};
