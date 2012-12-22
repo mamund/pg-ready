@@ -13,7 +13,7 @@ var pgblib = function() {
     g.isReady = false;
     g.isAndriod = false;
     g.isBlackberry = false;
-    g.isIphone = false;
+    g.isIphone = false;i
     g.isWindows = false;
 
     function init() {
@@ -22,7 +22,9 @@ var pgblib = function() {
 
     function onDeviceReady() {
         isReady = true;
+        alert(device.uuid);
         g.deviceUUID = device.uuid;
+        alert(g.deviceUUID);
         deviceDetection();
     }
 
