@@ -29,16 +29,16 @@ var pgblib = function() {
         if(isPhoneGapReady) {
             switch (device.platform) {
                 case 'Android' :
-                    isAndroid = true;
+                    g.isAndroid = true;
                     break;
                 case 'Blackberry' :
-                    isBlackberry = true;
+                    g.isBlackberry = true;
                     break;
                 case 'iPhone' :
-                    isIphone = true;
+                    g.isIphone = true;
                     break;
                 case 'WinCE' :
-                    isWindows = true;
+                    g.isWindows = true;
                     break;
             }
         }
