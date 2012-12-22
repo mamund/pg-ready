@@ -5,6 +5,7 @@ var pg;
 window.onload= function() {
     pg = pgblib();
     pg.init();
+    alert(pg.g.isAndriod);
 }
 
 var pgblib = function() {
@@ -22,9 +23,7 @@ var pgblib = function() {
 
     function onDeviceReady() {
         isReady = true;
-        alert(device.uuid);
         g.deviceUUID = device.uuid;
-        alert(g.deviceUUID);
         deviceDetection();
     }
 
@@ -45,7 +44,6 @@ var pgblib = function() {
                     break;
             }
         }
-        alert(device.platform);
     }
     
     var that = {};
