@@ -1,10 +1,15 @@
-var isPhoneGapReady = false;
+// pgbuild common library
+// 2012-12 (@mamund)
+
+var isPhoneVGapReady, intervalID;
+
+isPhoneGapReady = false;
 function init() {
     // Add an event listener for deviceready
     document.addEventListener("deviceready", onDeviceReady, false);
 }
 
-var intervalID = window.setInterval(function() {
+intervalID = window.setInterval(function() {
     if (PhoneGap.available) {
         onDeviceReady();
     }
@@ -12,11 +17,9 @@ var intervalID = window.setInterval(function() {
 
 function onDeviceReady() {
     window.clearInterval(intervalID);
-    // set to true
     isPhoneGapReady = true;
     alert('The device is now ready');
 }
 
-// Set an onload handler to call the init function
-window.onload = init;
+document.addEventListener("onload",init, false);
 
