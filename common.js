@@ -5,18 +5,6 @@ function init() {
     document.addEventListener("deviceready", onDeviceReady, false);
 }
 
-// Older versions of Blackberry < 5.0 don't support
-// PhoneGap's custom events, so instead we need to perform
-// an interval check every 500 milliseconds to see whether
-// PhoneGap is ready. Once done, the interval will be
-// cleared and normal processing can begin.
-var intervalID = window.setInterval(function() {
-    alert('interval');
-    if (PhoneGap.available) {
-        onDeviceReady();
-    }
-}, 500);
-
 function onDeviceReady() {
     alert('onready');
     window.clearInterval(intervalID);
