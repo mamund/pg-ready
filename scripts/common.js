@@ -9,6 +9,7 @@ window.onload= function() {
 
 var pgblib = function() {
     var g = {};
+    g.deviceUUID = null;
     g.isReady = false;
     g.isAndriod = false;
     g.isBlackberry = false;
