@@ -21,5 +21,6 @@ function onDeviceReady() {
     alert('The device is now ready');
 }
 
-document.addEventListener("load",init, false);
+window.onload = init;
+//document.addEventListener("load",init, false);
 
