@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget 
+    xmlns = "http://www.w3.org/ns/widgets"
+    xmlns:gap = "http://phonegap.com/ns/1.0"
+    id = "com.mamund.pg.ajax"
+    version = "2.2.0">
+    
+    <name>mamund: pg-ready</name>
+    <description>
+        Exercises in using ajax in a phonegap app for android
+    </description>                          
+    <author
+        href="http://mamund.com"
+        email="mca@mamund.com">
+        Mike Amundsen
+    </author>                                                     
+    <icon src="icon.png" gap:role="default" />
+    <feature name="http://api.phonegap.com/1.0/geolocation"/>
+    <feature name="http://api.phonegap.com/1.0/network"/>
+    <preference name="orientation" value="portrait" />
+</widget>
