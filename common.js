@@ -1,5 +1,6 @@
 var isPhoneGapReady = false;
 function init() {
+    alert('init');
     // Add an event listener for deviceready
     document.addEventListener("deviceready", onDeviceReady, false);
 }
@@ -10,12 +11,14 @@ function init() {
 // PhoneGap is ready. Once done, the interval will be
 // cleared and normal processing can begin.
 var intervalID = window.setInterval(function() {
+    alert('interval');
     if (PhoneGap.available) {
         onDeviceReady();
     }
 }, 500);
 
 function onDeviceReady() {
+    alert('onready');
     window.clearInterval(intervalID);
     // set to true
     isPhoneGapReady = true;
