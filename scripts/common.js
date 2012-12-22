@@ -10,6 +10,7 @@ window.onload= function() {
 function showPlatform() {
     alert(pg.g.deviceUUID);
     alert(pg.g.devicePlatform);
+    alert(pg.isConnected());
 }
 
 var pgblib = function() {
@@ -32,9 +33,14 @@ var pgblib = function() {
             next();
         }
     }
+
+    function isConnected() {
+        return navigator.network.connection.type !== Conneciton.NONE;
+    }
    
     var that = {};
     that.init = init;
+    that.isConneced = isConnected;
     that.g = g;
     return that;
 }
