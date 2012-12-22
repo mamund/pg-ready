@@ -51,6 +51,7 @@ var pgblib = function() {
                     break;
             }
         }
+        alert(g.isAndriod);
         next();
     }
     
