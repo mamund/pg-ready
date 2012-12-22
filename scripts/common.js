@@ -10,11 +10,13 @@ window.onload= function() {
 function showPlatform() {
     alert(pg.g.isAndroid);
     alert(pg.g.deviceUUID);
+    alert(pg.g.devicePlatform);
 }
 
 var pgblib = function() {
     var g = {};
     g.deviceUUID = null;
+    g.devicePlatform = null;
     g.isReady = false;
     g.isAndriod = false;
     g.isBlackberry = false;
@@ -30,6 +32,7 @@ var pgblib = function() {
     function onDeviceReady(next) {
         isReady = true;
         g.deviceUUID = device.uuid;
+        g.devicePlatform = device.platform;
         deviceDetection(next);
     }
 
