@@ -4,7 +4,9 @@
 var pg;
 window.onload= function() {
     pg = pgblib();
+    alert('onload');
     pg.init();
+    alert('init is done');
     alert(pg.g.isAndriod);
 }
 
