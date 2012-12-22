@@ -50,5 +50,6 @@ var pgblib = function() {
     
     var that = {};
     that.init = init;
+    that.g = g;
     return that;
 }
