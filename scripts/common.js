@@ -8,15 +8,15 @@ window.onload= function() {
 }
 
 function showPlatform() {
-    alert(pg.g.deviceUUID);
-    alert(pg.g.devicePlatform);
+    alert(pg.g.isReady);
+    alert(pg.g.isConnected);
+    alert(pg.getDeviceUUID());
+    alert(pg.getPlatform());
     alert(pg.getConnectStatus());
 }
 
 var pgblib = function() {
     var g = {};
-    g.deviceUUID = null;
-    g.devicePlatform = null;
     g.isReady = false;
     g.isConnected = false;
 
@@ -28,8 +28,6 @@ var pgblib = function() {
 
     function onDeviceReady(next) {
         g.isReady = true;
-        g.deviceUUID = device.uuid;
-        g.devicePlatform = device.platform;
         
         document.addEventListener("online", onOnline, false);
         document.addEventListener("offline", onOffline, false);
@@ -39,6 +37,14 @@ var pgblib = function() {
         }
     }
 
+    function getDeviceUUID() {
+        return device.uuid;
+    }
+
+    function getPlatform() {
+        return device.platform;
+    }
+
     function getConnectStatus() {
         return navigator.network.connection.type;
     }
@@ -46,6 +52,7 @@ var pgblib = function() {
     function onOnline() {
         g.isConnected = true;
     }
+
     function onOffline() {
         g.isConnected = false;
     }
@@ -53,6 +60,8 @@ var pgblib = function() {
     var that = {};
     that.init = init;
     that.getConnectStatus = getConnectStatus;
+    that.getPlatform = getPlatform;
+    that.getDeviceUUID = getDeviceUUID;
     that.g = g;
     return that;
 }
