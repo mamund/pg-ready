@@ -10,7 +10,7 @@ window.onload= function() {
 function showPlatform() {
     alert(pg.g.deviceUUID);
     alert(pg.g.devicePlatform);
-    alert(pg.getConnectStatus();
+    alert(pg.getConnectStatus());
 }
 
 var pgblib = function() {
